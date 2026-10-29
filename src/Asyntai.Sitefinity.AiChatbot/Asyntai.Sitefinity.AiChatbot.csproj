@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>Asyntai.Sitefinity.AiChatbot</AssemblyName>
+    <RootNamespace>Asyntai.Sitefinity.AiChatbot</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+    <Version>1.0.0</Version>
+    <Company>Asyntai</Company>
+    <Authors>Asyntai</Authors>
+    <Product>Asyntai AI Chatbot for Sitefinity</Product>
+    <Description>Adds the Asyntai AI chat assistant to every page of your Sitefinity CMS website.</Description>
+    <Copyright>Copyright (c) Asyntai</Copyright>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <IsPackable>false</IsPackable>
+    <!-- The bin folder of a Sitefinity site. Pass it with -p:SitefinityBin=... when you build. -->
+    <SitefinityBin Condition="'$(SitefinityBin)' == ''">$(MSBuildThisFileDirectory)..\..\sitefinity-bin</SitefinityBin>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="Telerik.Sitefinity">
+      <HintPath>$(SitefinityBin)\Telerik.Sitefinity.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Telerik.Sitefinity.Utilities">
+      <HintPath>$(SitefinityBin)\Telerik.Sitefinity.Utilities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Telerik.Sitefinity.Services.Events">
+      <HintPath>$(SitefinityBin)\Telerik.Sitefinity.Services.Events.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Telerik.Sitefinity.Model">
+      <HintPath>$(SitefinityBin)\Telerik.Sitefinity.Model.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>$(SitefinityBin)\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
